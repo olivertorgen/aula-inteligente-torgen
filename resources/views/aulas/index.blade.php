@@ -28,6 +28,7 @@
             @if($aulas->isEmpty())
                 <p class="text-gray-600 text-center">No hay aulas registradas todavía.</p>
             @else
+
                 <div class="overflow-x-auto">
                     <table class="min-w-full bg-white rounded-lg overflow-hidden">
                         <thead class="bg-violet-200 text-violet-700 uppercase text-sm leading-normal">
@@ -66,4 +67,9 @@
         </div>
     </div>
 </body>
+<div class="flex justify-center mt-8">
+    <a href="{{ route('home') }}" class="inline-block bg-violet-300 text-violet-900 font-semibold py-3 px-8 rounded-full hover:bg-violet-400 transition duration-300 text-lg">
+        Volver a la página de inicio
+    </a>
+</div>
 </html>

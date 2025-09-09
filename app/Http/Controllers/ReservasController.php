@@ -8,7 +8,7 @@ use App\Models\Aula;
 use App\Models\Docente;
 use App\Models\Materia;
 
-class ReservaController extends Controller
+class ReservasController extends Controller
 {
     /**
      * Display a listing of the resource.

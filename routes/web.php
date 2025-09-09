@@ -2,47 +2,20 @@
 
 use Illuminate\Support\Facades\Route;
 
+// Importa los controladores con nombres en plural para que coincidan con los archivos
+use App\Http\Controllers\AulasController;
+use App\Http\Controllers\DocentesController;
+use App\Http\Controllers\MateriasController;
+use App\Http\Controllers\ReservasController;
+// ... (y los demás controladores)
+
+// Ruta para la página de inicio
 Route::get('/', function () {
     return view('home');
-});
-
-// Importa los controladores que vas a usar
-use App\Http\Controllers\AulaController;
-use App\Http\Controllers\DocenteController;
-use App\Http\Controllers\MateriaController;
-use App\Http\Controllers\ReservaController;
-use App\Http\Controllers\AiresAcondicionadosController;
-use App\Http\Controllers\FocosController;
-use App\Http\Controllers\DisponibilidadController;
-use App\Http\Controllers\CortinasController;
-use App\Http\Controllers\MueblesController;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-// Rutas de recursos para los controladores
-Route::resource('aulas', AulaController::class);
-Route::get('/aulas', [AulasController::class, 'index'])->name('aulas.index');
-Route::resource('docentes', DocenteController::class);
-Route::get('/docentes', [DocentesController::class, 'index'])->name('docentes.index');
-Route::resource('materias', MateriaController::class);
-Route::get('/Materias', [MateriassController::class, 'index'])->name('Materias.index');
-Route::resource('reservas', ReservaController::class);
-Route::get('/reservas', [ReservaController::class, 'index'])->name('reservas.index');
-Route::resource('aires-acondicionados', AiresAcondicionadosController::class);
-Route::get('/aires-acondicionados', [AiresAcondicionadosController::class, 'index'])->name('airesacondicionados.index');
-Route::resource('focos', FocosController::class);
-Route::get('/focos', [FocosController::class, 'index'])->name('focos.index');
-Route::resource('disponibilidades', DisponibilidadController::class);
-Route::resource('cortinas', CortinasController::class);
-Route::get('/cortinas', [CortinasController::class, 'index'])->name('cortinas.index');
-Route::resource('muebles', MueblesController::class);
-Route::get('/muebles', [MueblesController::class, 'index'])->name('muebles.index');
+})->name('home'); // <-- Añade el nombre a la ruta de inicio
+// Rutas de recursos
+Route::resource('aulas', AulasController::class);
+Route::resource('docentes', DocentesController::class);
+Route::resource('materias', MateriasController::class);
+Route::resource('reservas', ReservasController::class);
+// ... (y los demás Route::resource)
