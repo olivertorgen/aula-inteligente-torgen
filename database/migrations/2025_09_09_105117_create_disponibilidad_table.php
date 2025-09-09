@@ -11,13 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('aula_disponibilidad', function (Blueprint $table) {
-            $table->unsignedBigInteger('aula_id');
-            $table->unsignedBigInteger('disponibilidad_id');
+        Schema::create('disponibilidad', function (Blueprint $table) {
+            $table->id();
+            $table->string('dia_semana');
+            $table->time('hora_inicio');
+            $table->time('hora_fin');
             $table->timestamps();
+        });
 
-            $table->foreign('aula_id')->references('id')->on('aulas')->onDelete('cascade');
-            $table->foreign('disponibilidad_id')->references('id')->on('disponibilidad')->onDelete('cascade');
+        Schema::create('aula_disponibilidad', function (Blueprint $table) {
+            $table->foreignId('aula_id')->constrained('aulas')->onDelete('cascade');
+            $table->foreignId('disponibilidad_id')->constrained('disponibilidad')->onDelete('cascade');
+            $table->primary(['aula_id', 'disponibilidad_id']);
         });
     }
 
@@ -27,5 +32,6 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('aula_disponibilidad');
+        Schema::dropIfExists('disponibilidad');
     }
 };

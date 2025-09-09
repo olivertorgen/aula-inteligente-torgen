@@ -2,12 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 
-// Aquí está tu ruta, que apunta a tu vista home.blade.php
 Route::get('/', function () {
     return view('home');
 });
 
-// Esta es la ruta por defecto de Laravel. La mantenemos por si acaso.
 Route::get('/', function () {
     return view('welcome');
 });
@@ -43,8 +41,12 @@ Route::resource('aulas', AulaController::class);
 Route::resource('docentes', DocenteController::class);
 Route::resource('materias', MateriaController::class);
 Route::resource('reservas', ReservaController::class);
+Route::get('/reservas', [ReservaController::class, 'index'])->name('reservas.index');
 Route::resource('aires-acondicionados', AiresAcondicionadosController::class);
+Route::get('/aires-acondicionados', [AiresAcondicionadosController::class, 'index'])->name('airesacondicionados.index');
 Route::resource('focos', FocosController::class);
+Route::get('/focos', [FocosController::class, 'index'])->name('focos.index');
 Route::resource('disponibilidades', DisponibilidadController::class);
 Route::resource('cortinas', CortinasController::class);
+Route::get('/Cortinas', [CortinasController::class, 'index'])->name('cortinas.index');
 Route::resource('muebles', MueblesController::class);
