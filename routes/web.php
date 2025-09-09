@@ -6,9 +6,6 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/', function () {
-    return view('welcome');
-});
 // Importa los controladores que vas a usar
 use App\Http\Controllers\AulaController;
 use App\Http\Controllers\DocenteController;
@@ -31,15 +28,13 @@ use App\Http\Controllers\MueblesController;
 |
 */
 
-// Define la ruta principal
-Route::get('/', function () {
-    return view('welcome');
-});
-
 // Rutas de recursos para los controladores
 Route::resource('aulas', AulaController::class);
+Route::get('/aulas', [AulasController::class, 'index'])->name('aulas.index');
 Route::resource('docentes', DocenteController::class);
+Route::get('/docentes', [DocentesController::class, 'index'])->name('docentes.index');
 Route::resource('materias', MateriaController::class);
+Route::get('/Materias', [MateriassController::class, 'index'])->name('Materias.index');
 Route::resource('reservas', ReservaController::class);
 Route::get('/reservas', [ReservaController::class, 'index'])->name('reservas.index');
 Route::resource('aires-acondicionados', AiresAcondicionadosController::class);
@@ -48,5 +43,6 @@ Route::resource('focos', FocosController::class);
 Route::get('/focos', [FocosController::class, 'index'])->name('focos.index');
 Route::resource('disponibilidades', DisponibilidadController::class);
 Route::resource('cortinas', CortinasController::class);
-Route::get('/Cortinas', [CortinasController::class, 'index'])->name('cortinas.index');
+Route::get('/cortinas', [CortinasController::class, 'index'])->name('cortinas.index');
 Route::resource('muebles', MueblesController::class);
+Route::get('/muebles', [MueblesController::class, 'index'])->name('muebles.index');
