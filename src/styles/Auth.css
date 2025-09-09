@@ -1,0 +1,120 @@
+/* Colores de la paleta */
+:root {
+  --color-violeta: #6a0dad;
+  --color-purpura-suave: #9b59b6;
+  --color-amarillo: #f1c40f;
+  --color-amarillo-claro: #fcf19c;
+  --color-gris-oscuro: #2c3e50;
+}
+
+/* Estilos generales del contenedor */
+.auth-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: var(--color-gris-oscuro);
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+}
+
+.auth-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--color-amarillo-claro);
+  text-shadow: 0 0 10px var(--color-amarillo), 0 0 20px var(--color-amarillo);
+  margin-bottom: 2rem;
+}
+
+/* Estilos del formulario */
+.auth-form {
+  background: var(--color-violeta);
+  padding: 3rem;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(155, 89, 182, 0.5);
+  border: 2px solid var(--color-amarillo-claro);
+  width: 90%;
+  max-width: 450px;
+  animation: neon-glow 1.5s ease-in-out infinite alternate;
+}
+
+/* Animación de brillo neón */
+@keyframes neon-glow {
+  from {
+    box-shadow: 0 0 10px var(--color-purpura-suave), 0 0 20px var(--color-purpura-suave), 0 0 30px var(--color-purpura-suave);
+  }
+  to {
+    box-shadow: 0 0 20px var(--color-amarillo), 0 0 30px var(--color-amarillo), 0 0 40px var(--color-amarillo);
+  }
+}
+
+/* Estilos de los campos de entrada */
+.form-group {
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-amarillo-claro);
+}
+
+.auth-form input {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid var(--color-purpura-suave);
+  background-color: var(--color-gris-oscuro);
+  color: var(--color-amarillo);
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.auth-form input:focus {
+  outline: none;
+  border-color: var(--color-amarillo-claro);
+  box-shadow: 0 0 8px var(--color-amarillo);
+}
+
+/* Estilos del botón */
+.auth-button {
+  width: 100%;
+  padding: 1rem;
+  background: var(--color-amarillo);
+  color: var(--color-gris-oscuro);
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.auth-button:hover {
+  background: var(--color-amarillo-claro);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(241, 196, 15, 0.4);
+}
+
+/* Estilos del enlace de navegación */
+.auth-container p {
+  margin-top: 2rem;
+  font-size: 1rem;
+}
+
+.auth-container a {
+  color: var(--color-amarillo);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.auth-container a:hover {
+  color: var(--color-amarillo-claro);
+  text-shadow: 0 0 5px var(--color-amarillo);
+}
